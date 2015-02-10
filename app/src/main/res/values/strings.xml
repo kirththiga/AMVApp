@@ -5,4 +5,29 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="select1">Please select one of the following:</string>
+    <string name="select2">Please select between Cartesian and Polar:</string>
+
+    <string name="cart">Cartesian</string>
+    <string name="polar">Polar</string>
+
+    <string name="next">NEXT</string>
+    <string name="calc">CALCULATE</string>
+
+    <string name="add">Addition</string>
+    <string name="add_c">Vector Addition - Cartesian</string>
+    <string name="add_p">Vector Addition - Polar</string>
+    <string name="s_mult">Scalar Multiplication</string>
+    <string name="s_mult_c">Scalar Multiplication - Cartesian</string>
+    <string name="s_mult_p">Scalar Multiplication - Polar</string>
+    <string name="v_mult">Vector Multiplication</string>
+
+    <string name="v1">Vector 1</string>
+    <string name="v2">Vector 2</string>
+    <string name="v3">Vector 3</string>
+    <string name="x">X</string>
+    <string name="y">Y</string>
+    <string name="r">r</string>
+    <string name="t">Theta</string>
+
 </resources>
