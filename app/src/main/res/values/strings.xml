@@ -17,10 +17,14 @@
     <string name="add">Addition</string>
     <string name="add_c">Vector Addition - Cartesian</string>
     <string name="add_p">Vector Addition - Polar</string>
+
     <string name="s_mult">Scalar Multiplication</string>
     <string name="s_mult_c">Scalar Multiplication - Cartesian</string>
     <string name="s_mult_p">Scalar Multiplication - Polar</string>
+
     <string name="v_mult">Vector Multiplication</string>
+    <string name="v_mult_c">Vector Multiplication - Cartesian</string>
+    <string name="v_mult_p">Vector Multiplication - Polar</string>
 
     <string name="v1">Vector 1</string>
     <string name="v2">Vector 2</string>
