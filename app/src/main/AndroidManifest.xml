@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".addition_cartesian"
+            android:label="@string/title_activity_addition_cartesian" >
+        </activity>
+        <activity
+            android:name=".addition_polar"
+            android:label="@string/title_activity_addition_polar" >
+        </activity>
+        <activity
+            android:name=".smult_cartesian"
+            android:label="@string/title_activity_smult_cartesian" >
+        </activity>
+        <activity
+            android:name=".smult_polar"
+            android:label="@string/title_activity_smult_polar" >
+        </activity>
+        <activity
+            android:name=".vmult_cartesian"
+            android:label="@string/title_activity_vmult_cartesian" >
+        </activity>
+        <activity
+            android:name=".vmult_polar"
+            android:label="@string/title_activity_vmult_polar" >
+        </activity>
     </application>
 
 </manifest>

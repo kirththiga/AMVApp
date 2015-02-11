@@ -87,5 +87,6 @@
         android:text="@string/next"
         android:id="@+id/nextButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="nextSelection" />
 </RelativeLayout>
