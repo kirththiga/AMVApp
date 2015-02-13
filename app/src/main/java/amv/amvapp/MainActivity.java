@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.widget.*;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -41,6 +42,33 @@ public class MainActivity extends ActionBarActivity {
     /** Called when the user clicks the Next button */
     public void nextSelection(View view) {
         // Need to check which radio buttons are clicked and switch to that activity page.
-        Intent intent = new Intent(this, addition_cartesian.class);
+        RadioButton vectorAdd = (RadioButton) findViewById(R.id.vectorAdd);
+        RadioButton scalarMult = (RadioButton) findViewById(R.id.scarMult);
+        RadioButton vectorMult = (RadioButton) findViewById(R.id.vectorMult);
+        RadioButton cartesian = (RadioButton) findViewById(R.id.cartesian);
+        RadioButton polar = (RadioButton) findViewById(R.id.polar);
+
+        if(vectorAdd.isChecked() && cartesian.isChecked()) {
+            Intent intent = new Intent(this, addition_cartesian.class);
+            startActivity(intent);
+        } else if(vectorAdd.isChecked() && polar.isChecked()) {
+            Intent intent = new Intent(this, addition_polar.class);
+            startActivity(intent);
+        } else if(scalarMult.isChecked() && cartesian.isChecked()) {
+            Intent intent = new Intent(this, smult_cartesian.class);
+            startActivity(intent);
+        } else if(scalarMult.isChecked() && polar.isChecked()) {
+            Intent intent = new Intent(this, smult_polar.class);
+            startActivity(intent);
+        } else if(vectorMult.isChecked() && cartesian.isChecked()) {
+            Intent intent = new Intent(this, vmult_cartesian.class);
+            startActivity(intent);
+        } else if(vectorMult.isChecked() && polar.isChecked()) {
+            Intent intent = new Intent(this, vmult_polar.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 }
