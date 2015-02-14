@@ -126,7 +126,7 @@ public class addition_cartesian extends ActionBarActivity {
        Adding the x components of the two vectors for the resultant.
        Same process for y components.
      */
-    public int vectorAddTwo(int x1, int x2){
+    private int vectorAddTwo(int x1, int x2){
         int x = 0;
             x = x1 + x2;
         return x;
@@ -136,7 +136,7 @@ public class addition_cartesian extends ActionBarActivity {
        Adding the x components of the three vectors for the resultant.
        Same process for y components.
     */
-    public int vectorAddThree(int x1, int x2, int x3){
+    private int vectorAddThree(int x1, int x2, int x3){
         int x = 0;
         x = x1 + x2 + x3;
         return x;
