@@ -6,7 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class addition_cartesian extends ActionBarActivity {
@@ -42,7 +47,10 @@ public class addition_cartesian extends ActionBarActivity {
 
     public void vectorAdd(View view){
 
-        // Convert the contents from the input fields as a string
+        // Creating a list which contains the EditText fields
+        List<EditText> vectorComponents = new ArrayList<EditText>();
+
+        // Obtained the EditText fields
         EditText vectorAddx1 = (EditText) findViewById(R.id.vectorAddx1);
         EditText vectorAddy1 = (EditText) findViewById(R.id.vectorAddy1);
         EditText vectorAddx2 = (EditText) findViewById(R.id.vectorAddx2);
@@ -50,25 +58,68 @@ public class addition_cartesian extends ActionBarActivity {
         EditText vectorAddx3 = (EditText) findViewById(R.id.vectorAddx3);
         EditText vectorAddy3 = (EditText) findViewById(R.id.vectorAddy3);
 
-        String vectorx1 = vectorAddx1.getText().toString();
-        String vectory1 = vectorAddy1.getText().toString();
-        String vectorx2 = vectorAddx2.getText().toString();
-        String vectory2 = vectorAddy2.getText().toString();
-        String vectorx3 = vectorAddx3.getText().toString();
-        String vectory3 = vectorAddy3.getText().toString();
+        // Added all the EditText fields in the list
+        vectorComponents.add(vectorAddx1);
+        vectorComponents.add(vectorAddy1);
+        vectorComponents.add(vectorAddx2);
+        vectorComponents.add(vectorAddy2);
 
-        int x1 = Integer.parseInt(vectorx1);
-        int y1 = Integer.parseInt(vectory1);
-        int x2 = Integer.parseInt(vectorx2);
-        int y2 = Integer.parseInt(vectory2);
-        int x3 = Integer.parseInt(vectorx3);
-        int y3 = Integer.parseInt(vectory3);
+        // Obtained the radio buttons to check which button is selected
+        RadioButton addTwo = (RadioButton) findViewById(R.id.addTwo);
+        //RadioButton addThree = (RadioButton) findViewById(R.id.addThree);
 
-        int x = vectorAddTwo(x1,x2);
-        int y = vectorAddTwo(y1, y2);
+        // A placeholder to insert the numerical result on the screen.
         TextView result = (TextView) findViewById(R.id.displayVectorAdd);
+        String vector = "";
+        int component = 0;
+        int x = 0;
+        int y = 0;
+        List<Integer> xyComponents = new ArrayList<Integer>();
+
+        if(addTwo.isChecked()) {
+            // Iterating over the list to check for empty fields and display a message
+            for (EditText vectorField : vectorComponents) {
+                if (vectorField.getText().toString().isEmpty()) {
+                    result.setText(String.format("Numerical Result:"));
+                    Toast.makeText(this, "Enter values for empty fields", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    // Convert the contents from the input fields as a string
+                    vector = vectorField.getText().toString();
+                    component = Integer.parseInt(vector);
+                    xyComponents.add(component);
+                }
+            }
+
+            // Computed the result
+            x = vectorAddTwo(xyComponents.get(0), xyComponents.get(2));
+            y = vectorAddTwo(xyComponents.get(1), xyComponents.get(3));
+
+        } else {
+            vectorComponents.add(vectorAddx3);
+            vectorComponents.add(vectorAddy3);
+
+            for (EditText vectorField : vectorComponents) {
+                // Iterating over the list to check for empty fields and display a message
+                if (vectorField.getText().toString().isEmpty()) {
+                    result.setText(String.format("Numerical Result:"));
+                    Toast.makeText(this, "Enter values for empty fields", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    // Convert the contents from the input fields as a string
+                    vector = vectorField.getText().toString();
+                    component = Integer.parseInt(vector);
+                    xyComponents.add(component);
+                }
+            }
+            // Computed the result
+            x = vectorAddThree(xyComponents.get(0), xyComponents.get(2), xyComponents.get(4));
+            y = vectorAddThree(xyComponents.get(1), xyComponents.get(3), xyComponents.get(5));
+        }
+
         result.setText(String.format(""));
-        result.setText(String.format("Your result will be %d %d",x , y));
+        result.setText(String.format("Numerical Result: (" + x + ", " + y + ")"));
+
     }
 
     /* Vector addition for two vectors
@@ -81,9 +132,14 @@ public class addition_cartesian extends ActionBarActivity {
         return x;
     }
 
+    /* Vector addition for three vectors
+       Adding the x components of the three vectors for the resultant.
+       Same process for y components.
+    */
     public int vectorAddThree(int x1, int x2, int x3){
         int x = 0;
         x = x1 + x2 + x3;
         return x;
     }
+
 }

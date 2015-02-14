@@ -32,6 +32,8 @@
     <string name="title_activity_smult_polar">smult_polar</string>
     <string name="title_activity_vmult_cartesian">vmult_cartesian</string>
     <string name="title_activity_vmult_polar">vmult_polar</string>
-    <string name="result">Result :</string>
+    <string name="result">Numerical Result:</string>
+    <string name="addTwo">Two Vectors</string>
+    <string name="addThree">Three Vectors</string>
 
 </resources>
