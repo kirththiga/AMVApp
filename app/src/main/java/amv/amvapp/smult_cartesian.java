@@ -1,9 +1,16 @@
 package amv.amvapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class smult_cartesian extends ActionBarActivity {
@@ -35,5 +42,39 @@ public class smult_cartesian extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void returnMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void scalarMult(View view) {
+        // Creating a list which contains the EditText fields
+        List<EditText> vectorComponents = new ArrayList<EditText>();
+
+        // Obtained the EditText fields
+        EditText x1 = (EditText) findViewById(R.id.sMultx1);
+        EditText y1 = (EditText) findViewById(R.id.sMulty1);
+        EditText x2 = (EditText) findViewById(R.id.sMultx2);
+        EditText y2 = (EditText) findViewById(R.id.sMulty2);
+
+        // Add all the EditText fields in the list
+        vectorComponents.add(x1);
+        vectorComponents.add(y1);
+        vectorComponents.add(x2);
+        vectorComponents.add(y2);
+
+        // A placeholder to insert the numerical result on the screen.
+        TextView result = (TextView) findViewById(R.id.displayResult);
+        String vector = "";
+        int component = 0;
+        int x = 0;
+        int y = 0;
+        List<Integer> xyComponents = new ArrayList<Integer>();
+
+        for (EditText vectorField : vectorComponents) {
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 package amv.amvapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -45,6 +46,11 @@ public class addition_polar extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void returnMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void vectorAddPolar(View view) {
 
         // Creating a list which contains the EditText fields
@@ -69,7 +75,7 @@ public class addition_polar extends ActionBarActivity {
         //RadioButton addThree = (RadioButton) findViewById(R.id.addThree);
 
         // A placeholder to insert the numerical result on the screen.
-        TextView resultField = (TextView) findViewById(R.id.displayVectorAdd);
+        TextView resultField = (TextView) findViewById(R.id.displayResult);
         String vector = "";
         double component = 0.0;
         double[] result = new double[2];

@@ -2,91 +2,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/select1"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/opChoice">
+        android:layout_alignParentTop="true"
+        android:text="@string/select1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RadioGroup
+        android:id="@+id/opChoice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView">
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add"
             android:id="@+id/vectorAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:checked="true"
-            android:layout_marginTop="32dp" />
+            android:text="@string/add" />
 
         <RadioButton
+            android:id="@+id/scarMult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/s_mult"
-            android:id="@+id/scarMult" />
+            android:text="@string/s_mult" />
 
         <RadioButton
+            android:id="@+id/vectorMult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/v_mult"
-            android:id="@+id/vectorMult" />
+            android:text="@string/v_mult" />
     </RadioGroup>
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/select2"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/opChoice"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
+        android:layout_below="@+id/opChoice"
+        android:layout_marginTop="39dp"
+        android:text="@string/select2"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioGroup
+        android:id="@+id/coordChoice"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp"
-        android:id="@+id/coordChoice" >
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="32dp">
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cart"
             android:id="@+id/cartesian"
-            android:checked="true" />
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/polar"
-            android:id="@+id/polar" />
+            android:checked="true"
+            android:text="@string/cart" />
+
+        <RadioButton
+            android:id="@+id/polar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/polar" />
     </RadioGroup>
 
     <Button
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next"
-        android:id="@+id/nextButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="nextSelection" />
+        android:onClick="nextSelection"
+        android:text="@string/next" />
 </RelativeLayout>

@@ -213,26 +213,26 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/addChoice"
             android:layout_marginTop="32dp"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/calcACButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:onClick="vectorAdd"
                 android:text="@string/calc" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="returnMain"
                 android:text="@string/back" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/displayVectorAdd"
+            android:id="@+id/displayResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
