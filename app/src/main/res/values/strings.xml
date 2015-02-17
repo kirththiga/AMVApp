@@ -10,6 +10,7 @@
     <string name="polar">Polar</string>
     <string name="next">NEXT</string>
     <string name="calc">CALCULATE</string>
+    <string name="back">RETURN</string>
     <string name="add">Addition</string>
     <string name="add_c">Vector Addition - Cartesian</string>
     <string name="add_p">Vector Addition - Polar</string>
