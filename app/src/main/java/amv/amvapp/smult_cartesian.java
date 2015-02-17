@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,12 +70,26 @@ public class smult_cartesian extends ActionBarActivity {
         TextView result = (TextView) findViewById(R.id.displayResult);
         String vector = "";
         int component = 0;
-        int x = 0;
-        int y = 0;
+        int ans = 0;
         List<Integer> xyComponents = new ArrayList<Integer>();
 
         for (EditText vectorField : vectorComponents) {
-
+            if (vectorField.getText().toString().isEmpty()) {
+                result.setText(String.format("Numerical Result:"));
+                Toast.makeText(this, "Enter values for empty fields", Toast.LENGTH_SHORT).show();
+                return;
+            } else {
+                // Convert the contents from the input fields as a string
+                vector = vectorField.getText().toString();
+                component = Integer.parseInt(vector);
+                xyComponents.add(component);
+            }
         }
+        ans = sMultiplication(xyComponents.get(0), xyComponents.get(1), xyComponents.get(2), xyComponents.get(3));
+        result.setText(String.format("Numerical Result: " + ans));
+    }
+
+    private int sMultiplication(int x1, int y1, int x2, int y2) {
+        return (x1 * x2 + y1 * y2);
     }
 }

@@ -51,7 +51,7 @@ public class addition_cartesian extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void vectorAdd(View view){
+    public void vectorAdd(View view) {
 
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();
@@ -82,7 +82,7 @@ public class addition_cartesian extends ActionBarActivity {
         int y = 0;
         List<Integer> xyComponents = new ArrayList<Integer>();
 
-        if(addTwo.isChecked()) {
+        if (addTwo.isChecked()) {
             // Iterating over the list to check for empty fields and display a message
             for (EditText vectorField : vectorComponents) {
                 if (vectorField.getText().toString().isEmpty()) {
@@ -132,9 +132,9 @@ public class addition_cartesian extends ActionBarActivity {
        Adding the x components of the two vectors for the resultant.
        Same process for y components.
      */
-    private int vectorAddTwo(int x1, int x2){
+    private int vectorAddTwo(int x1, int x2) {
         int x = 0;
-            x = x1 + x2;
+        x = x1 + x2;
         return x;
     }
 
@@ -142,7 +142,7 @@ public class addition_cartesian extends ActionBarActivity {
        Adding the x components of the three vectors for the resultant.
        Same process for y components.
     */
-    private int vectorAddThree(int x1, int x2, int x3){
+    private int vectorAddThree(int x1, int x2, int x3) {
         int x = 0;
         x = x1 + x2 + x3;
         return x;

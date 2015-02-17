@@ -39,7 +39,9 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /** Called when the user clicks the Next button */
+    /**
+     * Called when the user clicks the Next button
+     */
     public void nextSelection(View view) {
         // Need to check which radio buttons are clicked and switch to that activity page.
         RadioButton vectorAdd = (RadioButton) findViewById(R.id.vectorAdd);
@@ -48,22 +50,22 @@ public class MainActivity extends ActionBarActivity {
         RadioButton cartesian = (RadioButton) findViewById(R.id.cartesian);
         RadioButton polar = (RadioButton) findViewById(R.id.polar);
 
-        if(vectorAdd.isChecked() && cartesian.isChecked()) {
+        if (vectorAdd.isChecked() && cartesian.isChecked()) {
             Intent intent = new Intent(this, addition_cartesian.class);
             startActivity(intent);
-        } else if(vectorAdd.isChecked() && polar.isChecked()) {
+        } else if (vectorAdd.isChecked() && polar.isChecked()) {
             Intent intent = new Intent(this, addition_polar.class);
             startActivity(intent);
-        } else if(scalarMult.isChecked() && cartesian.isChecked()) {
+        } else if (scalarMult.isChecked() && cartesian.isChecked()) {
             Intent intent = new Intent(this, smult_cartesian.class);
             startActivity(intent);
-        } else if(scalarMult.isChecked() && polar.isChecked()) {
+        } else if (scalarMult.isChecked() && polar.isChecked()) {
             Intent intent = new Intent(this, smult_polar.class);
             startActivity(intent);
-        } else if(vectorMult.isChecked() && cartesian.isChecked()) {
+        } else if (vectorMult.isChecked() && cartesian.isChecked()) {
             Intent intent = new Intent(this, vmult_cartesian.class);
             startActivity(intent);
-        } else if(vectorMult.isChecked() && polar.isChecked()) {
+        } else if (vectorMult.isChecked() && polar.isChecked()) {
             Intent intent = new Intent(this, vmult_polar.class);
             startActivity(intent);
         } else {

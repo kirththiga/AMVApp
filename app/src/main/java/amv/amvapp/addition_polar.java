@@ -81,7 +81,7 @@ public class addition_polar extends ActionBarActivity {
         double[] result = new double[2];
         List<Double> rtComponents = new ArrayList<Double>();
 
-        if(addTwo.isChecked()) {
+        if (addTwo.isChecked()) {
             // Iterating over the list to check for empty fields and display a message
             for (EditText vectorField : vectorComponents) {
                 if (vectorField.getText().toString().isEmpty()) {
@@ -107,20 +107,20 @@ public class addition_polar extends ActionBarActivity {
        Adding the x and y components of the two vectors for the resultant.
        Then, obtain thetha using the final x and y component values.
     */
-    private double[] vectorAddTwo(double r1, double t1, double r2, double t2){
+    private double[] vectorAddTwo(double r1, double t1, double r2, double t2) {
 
         double[] result = new double[2];
 
-        double r1x = r1*Math.cos(t1);
-        double r1y = r1*Math.sin(t1);
-        double r2x = r2*Math.cos(t2);
-        double r2y = r2*Math.sin(t2);
+        double r1x = r1 * Math.cos(t1);
+        double r1y = r1 * Math.sin(t1);
+        double r2x = r2 * Math.cos(t2);
+        double r2y = r2 * Math.sin(t2);
 
         double rx = r1x + r2x;
         double ry = r1y + r2y;
 
-        double r = Math.sqrt(rx*rx + ry*ry);
-        double t = Math.tan(ry/rx);
+        double r = Math.sqrt(rx * rx + ry * ry);
+        double t = Math.tan(ry / rx);
 
         result[0] = r;
         result[1] = t;
