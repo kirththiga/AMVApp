@@ -69,9 +69,9 @@ public class smult_cartesian extends ActionBarActivity {
         // A placeholder to insert the numerical result on the screen.
         TextView result = (TextView) findViewById(R.id.displayResult);
         String vector = "";
-        int component = 0;
-        int ans = 0;
-        List<Integer> xyComponents = new ArrayList<Integer>();
+        double component = 0;
+        double ans = 0;
+        List<Double> xyComponents = new ArrayList<Double>();
 
         for (EditText vectorField : vectorComponents) {
             if (vectorField.getText().toString().isEmpty()) {
@@ -81,7 +81,7 @@ public class smult_cartesian extends ActionBarActivity {
             } else {
                 // Convert the contents from the input fields as a string
                 vector = vectorField.getText().toString();
-                component = Integer.parseInt(vector);
+                component = Double.parseDouble(vector);
                 xyComponents.add(component);
             }
         }
@@ -89,7 +89,7 @@ public class smult_cartesian extends ActionBarActivity {
         result.setText(String.format("Numerical Result: " + ans));
     }
 
-    private int sMultiplication(int x1, int y1, int x2, int y2) {
+    private double sMultiplication(double x1, double y1, double x2, double y2) {
 
         return (x1 * x2 + y1 * y2);
     }

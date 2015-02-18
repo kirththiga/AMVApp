@@ -34,7 +34,7 @@
     <string name="title_activity_vmult_cartesian">vmult_cartesian</string>
     <string name="title_activity_vmult_polar">vmult_polar</string>
     <string name="result">Numerical Result:</string>
-    <string name="addTwo">Two Vectors</string>
-    <string name="addThree">Three Vectors</string>
+    <string name="addTwo">Vector 1, 2</string>
+    <string name="addThree">Vector 1, 2, 3</string>
 
 </resources>

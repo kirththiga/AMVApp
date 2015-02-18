@@ -77,10 +77,10 @@ public class addition_cartesian extends ActionBarActivity {
         // A placeholder to insert the numerical result on the screen.
         TextView result = (TextView) findViewById(R.id.displayResult);
         String vector = "";
-        int component = 0;
-        int x = 0;
-        int y = 0;
-        List<Integer> xyComponents = new ArrayList<Integer>();
+        double component = 0.0;
+        double x = 0.0;
+        double y = 0.0;
+        List<Double> xyComponents = new ArrayList<Double>();
 
         if (addTwo.isChecked()) {
             // Iterating over the list to check for empty fields and display a message
@@ -92,7 +92,7 @@ public class addition_cartesian extends ActionBarActivity {
                 } else {
                     // Convert the contents from the input fields as a string
                     vector = vectorField.getText().toString();
-                    component = Integer.parseInt(vector);
+                    component = Double.parseDouble(vector);
                     xyComponents.add(component);
                 }
             }
@@ -114,7 +114,7 @@ public class addition_cartesian extends ActionBarActivity {
                 } else {
                     // Convert the contents from the input fields as a string
                     vector = vectorField.getText().toString();
-                    component = Integer.parseInt(vector);
+                    component = Double.parseDouble(vector);
                     xyComponents.add(component);
                 }
             }
@@ -132,9 +132,9 @@ public class addition_cartesian extends ActionBarActivity {
        Adding the x components of the two vectors for the resultant.
        Same process for y components.
      */
-    private int vectorAddTwo(int x1, int x2) {
-        int x = 0;
-        x = x1 + x2;
+    private double vectorAddTwo(double x1, double x2) {
+
+        double x = x1 + x2;
         return x;
     }
 
@@ -142,9 +142,9 @@ public class addition_cartesian extends ActionBarActivity {
        Adding the x components of the three vectors for the resultant.
        Same process for y components.
     */
-    private int vectorAddThree(int x1, int x2, int x3) {
-        int x = 0;
-        x = x1 + x2 + x3;
+    private double vectorAddThree(double x1, double x2, double x3) {
+
+        double x = x1 + x2 + x3;
         return x;
     }
 

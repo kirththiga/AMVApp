@@ -111,10 +111,10 @@ public class addition_polar extends ActionBarActivity {
 
         double[] result = new double[2];
 
-        double r1x = r1 * Math.cos(t1);
-        double r1y = r1 * Math.sin(t1);
-        double r2x = r2 * Math.cos(t2);
-        double r2y = r2 * Math.sin(t2);
+        double r1x = r1 * Math.cos(Math.toRadians(t1));
+        double r1y = r1 * Math.sin(Math.toRadians(t1));
+        double r2x = r2 * Math.cos(Math.toRadians(t2));
+        double r2y = r2 * Math.sin(Math.toRadians(t2));
 
         double rx = r1x + r2x;
         double ry = r1y + r2y;
@@ -123,7 +123,7 @@ public class addition_polar extends ActionBarActivity {
         double t = Math.tan(ry / rx);
 
         result[0] = r;
-        result[1] = t;
+        result[1] = Math.toDegrees(t);
 
         return result;
     }
