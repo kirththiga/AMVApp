@@ -136,6 +136,7 @@
                 android:id="@+id/calcVCButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="vectorMult"
                 android:text="@string/calc" />
 
             <Button
