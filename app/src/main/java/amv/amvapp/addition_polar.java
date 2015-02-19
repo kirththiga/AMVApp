@@ -57,12 +57,12 @@ public class addition_polar extends ActionBarActivity {
         List<EditText> vectorComponents = new ArrayList<EditText>();
 
         // Obtained the EditText fields
-        EditText vectorAddr1 = (EditText) findViewById(R.id.vectorAddx1);
-        EditText vectorAddt1 = (EditText) findViewById(R.id.vectorAddy1);
-        EditText vectorAddr2 = (EditText) findViewById(R.id.vectorAddx2);
-        EditText vectorAddt2 = (EditText) findViewById(R.id.vectorAddy2);
-        EditText vectorAddr3 = (EditText) findViewById(R.id.vectorAddx3);
-        EditText vectorAddt3 = (EditText) findViewById(R.id.vectorAddy3);
+        EditText vectorAddr1 = (EditText) findViewById(R.id.vectorAddr1);
+        EditText vectorAddt1 = (EditText) findViewById(R.id.vectorAddt1);
+        EditText vectorAddr2 = (EditText) findViewById(R.id.vectorAddr2);
+        EditText vectorAddt2 = (EditText) findViewById(R.id.vectorAddt2);
+        EditText vectorAddr3 = (EditText) findViewById(R.id.vectorAddr3);
+        EditText vectorAddt3 = (EditText) findViewById(R.id.vectorAddt3);
 
         // Added all the EditText fields in the list
         vectorComponents.add(vectorAddr1);
@@ -118,6 +118,28 @@ public class addition_polar extends ActionBarActivity {
             result[0] = -1;
             result[1] = -2;
         }
+        else {
+            vectorComponents.add(vectorAddr3);
+            vectorComponents.add(vectorAddt3);
+
+            for (EditText vectorField : vectorComponents) {
+                // Iterating over the list to check for empty fields and display a message
+                if (vectorField.getText().toString().isEmpty()) {
+                    resultField.setText(String.format("Numerical Result:"));
+                    Toast.makeText(this, "Enter values for empty fields", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    // Convert the contents from the input fields as a string
+                    vector = vectorField.getText().toString();
+                    component = Double.parseDouble(vector);
+                    rtComponents.add(component);
+                }
+            }
+            // Computed the result
+            result = vectorAddThree(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2),
+                    rtComponents.get(3), rtComponents.get(4), rtComponents.get(5));
+
+        }
         resultField.setText(String.format(""));
         resultField.setText(String.format("Numerical Result: %.2f at %.2f", result[0], result[1]));
     }
@@ -126,19 +148,43 @@ public class addition_polar extends ActionBarActivity {
        Adding the x and y components of the two vectors for the resultant.
        Then, obtain thetha using the final x and y component values.
     */
-    private double[] vectorAddPolarTwo(double r1, double t1, double r2, double t2) {
-
+    private double[] vectorAddTwo(double r1, double t1, double r2, double t2) {
+        double r1x, r1y, r2x, r2y, rx, ry, r, t;
         double[] result = new double[2];
-        double r1x = r1 * Math.cos(Math.toRadians(t1));
-        double r1y = r1 * Math.sin(Math.toRadians(t1));
-        double r2x = r2 * Math.cos(Math.toRadians(t2));
-        double r2y = r2 * Math.sin(Math.toRadians(t2));
 
-        double rx = r1x + r2x;
-        double ry = r1y + r2y;
+        r1x = r1 * Math.cos(Math.toRadians(t1));
+        r1y = r1 * Math.sin(Math.toRadians(t1));
+        r2x = r2 * Math.cos(Math.toRadians(t2));
+        r2y = r2 * Math.sin(Math.toRadians(t2));
 
-        double r = Math.sqrt(rx * rx + ry * ry);
-        double t = Math.tan(Math.toRadians(ry / rx));
+        rx = r1x + r2x;
+        ry = r1y + r2y;
+
+        r = Math.sqrt(rx * rx + ry * ry);
+        t = Math.atan(ry / rx);
+
+        result[0] = r;
+        result[1] = Math.toDegrees(t);
+
+        return result;
+    }
+
+    private double[] vectorAddThree(double r1, double t1, double r2, double t2, double r3, double t3) {
+        double r1x, r1y, r2x, r2y, r3x, r3y, rx, ry, r, t;
+        double[] result = new double[2];
+
+        r1x = r1 * Math.cos(Math.toRadians(t1));
+        r1y = r1 * Math.sin(Math.toRadians(t1));
+        r2x = r2 * Math.cos(Math.toRadians(t2));
+        r2y = r2 * Math.sin(Math.toRadians(t2));
+        r3x = r3 * Math.cos(Math.toRadians(t3));
+        r3y = r3 * Math.sin(Math.toRadians(t3));
+
+        rx = r1x + r2x + r3x;
+        ry = r1y + r2y + r3y;
+
+        r = Math.sqrt(rx * rx + ry * ry);
+        t = Math.atan(ry / rx);
 
         result[0] = r;
         result[1] = t;
