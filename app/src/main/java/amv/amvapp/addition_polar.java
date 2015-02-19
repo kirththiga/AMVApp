@@ -96,29 +96,9 @@ public class addition_polar extends ActionBarActivity {
                 }
             }
             // Computed the result
-            result = vectorAddPolarTwo(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2), rtComponents.get(3));
+            result = vectorPolarAddTwo(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2), rtComponents.get(3));
 
         } else {
-            vectorComponents.add(vectorAddr2);
-            vectorComponents.add(vectorAddt2);
-
-            for (EditText vectorField : vectorComponents) {
-                // Iterating over the list to check for empty fields and display a message
-                if (vectorField.getText().toString().isEmpty()) {
-                    resultField.setText(String.format("Numerical Result:"));
-                    Toast.makeText(this, "Enter values for empty fields", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    // Convert the contents from the input fields as a string
-                    vector = vectorField.getText().toString();
-                    component = Double.parseDouble(vector);
-                    rtComponents.add(component);
-                }
-            }
-            result[0] = -1;
-            result[1] = -2;
-        }
-        else {
             vectorComponents.add(vectorAddr3);
             vectorComponents.add(vectorAddt3);
 
@@ -136,7 +116,7 @@ public class addition_polar extends ActionBarActivity {
                 }
             }
             // Computed the result
-            result = vectorAddThree(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2),
+            result = vectorPolarAddThree(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2),
                     rtComponents.get(3), rtComponents.get(4), rtComponents.get(5));
 
         }
@@ -148,7 +128,7 @@ public class addition_polar extends ActionBarActivity {
        Adding the x and y components of the two vectors for the resultant.
        Then, obtain thetha using the final x and y component values.
     */
-    private double[] vectorAddTwo(double r1, double t1, double r2, double t2) {
+    private double[] vectorPolarAddTwo(double r1, double t1, double r2, double t2) {
         double r1x, r1y, r2x, r2y, rx, ry, r, t;
         double[] result = new double[2];
 
@@ -169,7 +149,7 @@ public class addition_polar extends ActionBarActivity {
         return result;
     }
 
-    private double[] vectorAddThree(double r1, double t1, double r2, double t2, double r3, double t3) {
+    private double[] vectorPolarAddThree(double r1, double t1, double r2, double t2, double r3, double t3) {
         double r1x, r1y, r2x, r2y, r3x, r3y, rx, ry, r, t;
         double[] result = new double[2];
 
