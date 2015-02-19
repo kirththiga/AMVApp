@@ -86,7 +86,7 @@ public class smult_cartesian extends ActionBarActivity {
             }
         }
         ans = sMultiplication(xyComponents.get(0), xyComponents.get(1), xyComponents.get(2), xyComponents.get(3));
-        result.setText(String.format("Numerical Result: " + ans));
+        result.setText(String.format("Numerical Result: %.2f", ans));
     }
 
     private double sMultiplication(double x1, double y1, double x2, double y2) {

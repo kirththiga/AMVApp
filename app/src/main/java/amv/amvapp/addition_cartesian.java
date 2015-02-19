@@ -124,7 +124,7 @@ public class addition_cartesian extends ActionBarActivity {
         }
 
         result.setText(String.format(""));
-        result.setText(String.format("Numerical Result: (" + x + ", " + y + ")"));
+        result.setText(String.format("Numerical Result: (%.2f, %.2f)", x, y));
 
     }
 

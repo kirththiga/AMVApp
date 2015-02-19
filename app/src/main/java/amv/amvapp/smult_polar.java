@@ -86,7 +86,7 @@ public class smult_polar extends ActionBarActivity {
             }
         }
         ans = sMultiplication(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2), rtComponents.get(3));
-        result.setText(String.format("Numerical Result: " + ans));
+        result.setText(String.format("Numerical Result: %.2f", ans));
     }
 
     private double sMultiplication(Double r1, Double t1, Double r2, Double t2) {

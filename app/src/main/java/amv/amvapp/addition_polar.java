@@ -95,22 +95,40 @@ public class addition_polar extends ActionBarActivity {
                     rtComponents.add(component);
                 }
             }
-
             // Computed the result
-            result = vectorAddTwo(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2), rtComponents.get(3));
+            result = vectorAddPolarTwo(rtComponents.get(0), rtComponents.get(1), rtComponents.get(2), rtComponents.get(3));
+
+        } else {
+            vectorComponents.add(vectorAddr2);
+            vectorComponents.add(vectorAddt2);
+
+            for (EditText vectorField : vectorComponents) {
+                // Iterating over the list to check for empty fields and display a message
+                if (vectorField.getText().toString().isEmpty()) {
+                    resultField.setText(String.format("Numerical Result:"));
+                    Toast.makeText(this, "Enter values for empty fields", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    // Convert the contents from the input fields as a string
+                    vector = vectorField.getText().toString();
+                    component = Double.parseDouble(vector);
+                    rtComponents.add(component);
+                }
+            }
+            result[0] = -1;
+            result[1] = -2;
         }
         resultField.setText(String.format(""));
-        resultField.setText(String.format("Numerical Result: " + result[0] + " at " + result[1]));
+        resultField.setText(String.format("Numerical Result: %.2f at %.2f", result[0], result[1]));
     }
 
     /* Vector addition for two vectors in polar form
        Adding the x and y components of the two vectors for the resultant.
        Then, obtain thetha using the final x and y component values.
     */
-    private double[] vectorAddTwo(double r1, double t1, double r2, double t2) {
+    private double[] vectorAddPolarTwo(double r1, double t1, double r2, double t2) {
 
         double[] result = new double[2];
-
         double r1x = r1 * Math.cos(Math.toRadians(t1));
         double r1y = r1 * Math.sin(Math.toRadians(t1));
         double r2x = r2 * Math.cos(Math.toRadians(t2));
@@ -120,10 +138,10 @@ public class addition_polar extends ActionBarActivity {
         double ry = r1y + r2y;
 
         double r = Math.sqrt(rx * rx + ry * ry);
-        double t = Math.tan(ry / rx);
+        double t = Math.tan(Math.toRadians(ry / rx));
 
         result[0] = r;
-        result[1] = Math.toDegrees(t);
+        result[1] = t;
 
         return result;
     }
