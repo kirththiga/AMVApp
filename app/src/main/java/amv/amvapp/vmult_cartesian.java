@@ -92,10 +92,12 @@ public class vmult_cartesian extends ActionBarActivity {
     }
 
     public double vMultiplication(double x1, double y1, double x2, double y2) {
-        double x = magnitude(x1, y1);
-        double y = magnitude(x2, y2);
-        double angle = angle(x1, y1, x2, y2);
-        double ans = x*y*Math.sin(angle);
+        double x, y, angle, ans;
+
+        x = magnitude(x1, y1);
+        y = magnitude(x2, y2);
+        angle = angle(x1, y1, x2, y2);
+        ans = x*y*Math.sin(angle);
 
         //return x1 * y2 - x2 * y1;
         return ans;
@@ -106,12 +108,14 @@ public class vmult_cartesian extends ActionBarActivity {
     }
 
     public double angle(double x1, double y1, double x2, double y2){
-        double n = x1*x2 + y1*y2;
-        double x = magnitude(x1, y1);
-        double y = magnitude(x2, y2);
+        double dotProduct, x, y, cosAngle, angle;
 
-        double cosAngle = n/(x*y);
-        double angle = Math.acos(cosAngle);
+        dotProduct = x1*x2 + y1*y2;
+        x = magnitude(x1, y1);
+        y = magnitude(x2, y2);
+
+        cosAngle = dotProduct/(x*y);
+        angle = Math.acos(cosAngle);
 
         return angle;
     }

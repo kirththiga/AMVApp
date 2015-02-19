@@ -167,7 +167,7 @@ public class addition_polar extends ActionBarActivity {
         t = Math.atan(ry / rx);
 
         result[0] = r;
-        result[1] = t;
+        result[1] = Math.toDegrees(t);
 
         return result;
     }
