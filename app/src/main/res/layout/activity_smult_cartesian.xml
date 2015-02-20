@@ -136,7 +136,7 @@
                 android:id="@+id/calcSCButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="scalarMult"
+                android:onClick="scalarCart"
                 android:text="@string/calc" />
 
             <Button

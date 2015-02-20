@@ -51,7 +51,7 @@ public class addition_cartesian extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void vectorAdd(View view) {
+    public void addCart(View view) {
 
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();

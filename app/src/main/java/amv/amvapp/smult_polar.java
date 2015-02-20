@@ -50,7 +50,7 @@ public class smult_polar extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void scalarMult(View view) {
+    public void scalarPolar(View view) {
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();
 

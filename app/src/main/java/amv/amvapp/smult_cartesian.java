@@ -50,7 +50,7 @@ public class smult_cartesian extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void scalarMult(View view) {
+    public void scalarCart(View view) {
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();
 

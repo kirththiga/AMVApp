@@ -57,7 +57,6 @@
                 android:ems="10"
                 android:inputType="numberDecimal" />
 
-
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
@@ -221,7 +220,7 @@
                 android:id="@+id/calcACButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="vectorAdd"
+                android:onClick="addCart"
                 android:text="@string/calc" />
 
             <Button

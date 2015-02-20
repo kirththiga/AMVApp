@@ -50,7 +50,7 @@ public class vmult_cartesian extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void vectorMult(View view) {
+    public void vectorCart(View view) {
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();
 

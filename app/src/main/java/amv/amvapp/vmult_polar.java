@@ -50,7 +50,7 @@ public class vmult_polar extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void vectorMult(View view) {
+    public void vectorPolar(View view) {
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();
 

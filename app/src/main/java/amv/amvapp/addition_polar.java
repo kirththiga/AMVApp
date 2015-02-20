@@ -51,7 +51,7 @@ public class addition_polar extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void vectorAddPolar(View view) {
+    public void addPolar(View view) {
 
         // Creating a list which contains the EditText fields
         List<EditText> vectorComponents = new ArrayList<EditText>();
