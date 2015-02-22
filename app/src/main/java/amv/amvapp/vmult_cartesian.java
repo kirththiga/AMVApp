@@ -87,36 +87,12 @@ public class vmult_cartesian extends ActionBarActivity {
             }
         }
         ans = vMultiplication(xyComponents.get(0), xyComponents.get(1), xyComponents.get(2), xyComponents.get(3));
-        angle = angle(xyComponents.get(0), xyComponents.get(1), xyComponents.get(2), xyComponents.get(3));
-        result.setText(String.format("Numerical Result: magnitude %.2f", ans));
+        result.setText(String.format("Numerical Result: %.2f", ans));
     }
 
     public double vMultiplication(double x1, double y1, double x2, double y2) {
-        double x, y, angle, ans;
 
-        x = magnitude(x1, y1);
-        y = magnitude(x2, y2);
-        angle = angle(x1, y1, x2, y2);
-        ans = x*y*Math.sin(angle);
-
-        //return x1 * y2 - x2 * y1;
-        return ans;
+        return x1 * y2 - x2 * y1;
     }
 
-    public double magnitude(double x, double y){
-        return Math.sqrt(x*x + y*y);
-    }
-
-    public double angle(double x1, double y1, double x2, double y2){
-        double dotProduct, x, y, cosAngle, angle;
-
-        dotProduct = x1*x2 + y1*y2;
-        x = magnitude(x1, y1);
-        y = magnitude(x2, y2);
-
-        cosAngle = dotProduct/(x*y);
-        angle = Math.acos(cosAngle);
-
-        return angle;
-    }
 }

@@ -2,10 +2,6 @@ public class additionCartesian {
 
 	public static void main(String[] args) {
 
-		String result;
-		if (args.length == 4) {
-			// result = vectorAddTwoResult(args[0], args[1], args[2], args[3]);
-		}
 	}
 
 	public static String vectorAddTwoResult(String x1, String y1, String x2, String y2) {
