@@ -54,7 +54,7 @@ public class vectorPolarTest {
 		r2 = "81";
 		t2 = "18";
 		
-		result = "-6211.66";
+		result = "-760.10";
 		assertEquals(result, vectorPolar.vectorProductResult(r1, t1, r2, t2));
 		
 		r1 = "51.29";
@@ -62,7 +62,7 @@ public class vectorPolarTest {
 		r2 = "13.26";
 		t2 = "138.4";
 		
-		result = "";
+		result = "-675.92";
 		assertEquals(result, vectorPolar.vectorProductResult(r1, t1, r2, t2));
 	}
 }
