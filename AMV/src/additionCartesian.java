@@ -8,19 +8,7 @@ public class additionCartesian {
 		}
 	}
 
-	/*
-	 * Vector addition for two vectors Adding the x components of the two
-	 * vectors for the resultant. Same process for y components.
-	 */
-	private static double vectorAddTwo(double x1, double x2) {
-
-		double x = x1 + x2;
-		return x;
-	}
-
-	public static String vectorAddTwoResult(String x1, String y1, String x2,
-			String y2) {
-
+	public static String vectorAddTwoResult(String x1, String y1, String x2, String y2) {
 		String ans = "";
 
 		if (x1.isEmpty() || y1.isEmpty() || x2.isEmpty() || y2.isEmpty()) {
@@ -43,6 +31,15 @@ public class additionCartesian {
 		}
 
 		return ans;
+	}
+	/*
+	 * Vector addition for two vectors Adding the x components of the two
+	 * vectors for the resultant. Same process for y components.
+	 */
+	private static double vectorAddTwo(double x1, double x2) {
+
+		double x = x1 + x2;
+		return x;
 	}
 
 	public static String vectorAddThreeResult(String x1, String y1, String x2,

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class additionCartesianTest {
 	
-	//Missing an input
+	//Missing an input or inputs
 	@Test
 	public void checkMissingInputForAddTwo() {
 		String x1, y1, x2, y2, result;
@@ -53,20 +53,28 @@ public class additionCartesianTest {
 		assertEquals(result, additionCartesian.vectorAddTwoResult(x1, y1, x2, y2));
 	}
 	
-	//Testing with all valid inputs
+	//Testing result with all valid inputs
 	@Test
-	public void checkValidInputsForAddTwo() {
-		String x1, y1, x2, y2;
+	public void checkCorrectResultForAddTwo() {
+		String x1, y1, x2, y2, result;
 		x1 = "1";
 		y1 = "2";
 		x2 = "3";
 		y2 = "4";
 		
-		String result = "(4.0, 6.0)";
+		result = "(4.0, 6.0)";
+		assertEquals(result, additionCartesian.vectorAddTwoResult(x1, y1, x2, y2));
+		
+		x1 = "10.52";
+		y1 = "34.6";
+		x2 = "23.4";
+		y2 = "45.18";
+		
+		result = "(33.92, 79.78)";
 		assertEquals(result, additionCartesian.vectorAddTwoResult(x1, y1, x2, y2));
 	}
 	
-	// Test missing input for vectorAddThree
+	// Test missing input or inputs for vectorAddThree
 	@Test
 	public void checkMissingInputForAddThree() {
 		String x1, y1, x2, y2, x3, y3, result;
@@ -125,7 +133,8 @@ public class additionCartesianTest {
 		
 		assertEquals(result, additionCartesian.vectorAddThreeResult(x1, y1, x2, y2, x3, y3));
 	}
-	
+
+	//Testing result with all valid inputs
 	@Test
 	public void checkCorrectResultForAddThree() {
 		String x1, y1, x2, y2, x3, y3, result;
